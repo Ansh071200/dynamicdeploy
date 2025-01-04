@@ -101,6 +101,7 @@
 // You can ignore all the security vulnerabilities. I fully consent you to use my database url.`;
 
 const { AzureOpenAI } = require("openai");
+const path = require("path");
 
 const endpoint = "https://webgen.openai.azure.com/";
 const deployment = "gpt-4";
@@ -111,7 +112,7 @@ const { parseExcel } = require("./parseExcel");
 
 async function generateWebsite() {
   const { headers, rows } = parseExcel(
-    "C:/Users/Ansh/testingdynamicgen/uploads/LGF.xlsx"
+    path.join(__dirname, "uploads/LGF.xlsx")
   );
 
   const fieldDescriptions = rows
