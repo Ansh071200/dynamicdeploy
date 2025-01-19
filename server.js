@@ -3,15 +3,15 @@ const bodyParser = require("body-parser");
 const path = require("path");
 const { generateWebsite } = require("./generateDynamic");
 const multer = require("multer");
+const fs = require("fs");
+const cors = require("cors");
+const AdmZip = require("adm-zip");
 const app = express();
 app.use(cors());
 app.use("/", express.static(path.join(__dirname, "generated")));
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 app.use(express.static("public"));
-const fs = require("fs");
-const cors = require("cors");
-const AdmZip = require("adm-zip");
 const port = process.env.PORT || 3000;
 app.get("/", (req, res) => {
   res.send("Hello there welcome to dynamic WEB GEN :-)");
