@@ -125,65 +125,90 @@ async function generateWebsite() {
 
   console.log(fieldDescriptions);
 
-  const prompt = `Create a fully functional website with the following requirements:
+ const prompt = `Create a fully functional website with the following requirements:
 
-1. Website Description: A Form with the following field descriptions:
-
-${fieldDescriptions}
+1. Website Description:
+A modern, professional form with the following field descriptions: ${fieldDescriptions}
+The form should feature a sleek, elevated design with depth effects and smooth transitions.
 
 2. Firebase Integration:
 Use the provided Firebase Realtime Database URL: https://innovent-434c6-default-rtdb.firebaseio.com/
-
-This URL needs to be used a 100 percent of the times without any exception in the webpage - https://innovent-434c6-default-rtdb.firebaseio.com/. 
-
+This URL needs to be used a 100 percent of the times without any exception in the webpage - https://innovent-434c6-default-rtdb.firebaseio.com/.
 Perform HTTP requests (GET, POST, DELETE) using the fetch API in JavaScript to interact with the database.
-
 Ensure the logic handles asynchronous operations properly (use async/await).
 
 3. HTML Requirements:
 Name: index.html
-Design a responsive and user-friendly layout that aligns with the website's description.
-
-Include dynamic elements such as forms and tables for user interactions.
-
-Structure the page with proper semantic HTML (e.g., header, main, footer).
+- Design a modern, card-based layout with proper spacing and hierarchy
+- Implement a glass-morphism effect for the form container
+- Structure the page with proper semantic HTML (e.g., header, main, footer)
+- Add subtle micro-interactions and loading states
+- Include dynamic elements such as forms and tables for user interactions
 
 4. CSS Requirements:
 Name: styles.css
-Implement clean and modern styling with the following properties:
-- A responsive layout that adapts well to different screen sizes.
-- Visual enhancements like hover effects for buttons and alternating row colors for tables.
+Modern UI Implementation:
+- Create a dramatic background gradient using the colors: #000000, #1a237e (deep blue), #ff6f00 (vibrant orange)
+- Implement glass-morphism effect with backdrop-filter: blur() and background-color: rgba()
+- Add depth with subtle box-shadows and border-radius
+- Include smooth transitions and animations (0.3s ease-in-out) for all interactive elements
 
-Ensure that the design reflects the purpose of the website mentioned in the description.
+Styling Features:
+- Floating label animations for form inputs
+- Custom-styled form elements (checkboxes, radio buttons, dropdowns)
+- Elegant button design with gradient hover effects
+- Sophisticated table design with hover states and smooth transitions
+- Modern typography using system font stack for optimal performance
+- Responsive layout with fluid typography (clamp() function)
+- Loading spinners and skeleton screens for async operations
+- Custom scrollbars that match the design theme
 
 5. JavaScript Requirements:
 Name: script.js
 Create logic to interact with the Firebase Realtime Database:
-- A function to fetch and display data dynamically on the page.
-- A function to add new data (e.g., from a form) to Firebase and refresh the view.
-- A function to delete specific records from Firebase.
-
-Include form validation to prevent invalid inputs.
-
-Add error handling to display user-friendly messages if Firebase operations fail.
+- Implement smooth loading states during async operations
+- Add elegant form validation with floating messages
+- Include modern toast notifications for success/error states
+- Create functions for:
+  * Fetching and displaying data with loading animations
+  * Adding new data with success feedback
+  * Deleting records with confirmation modals
+- Add debounced form validation
+- Implement progressive enhancement
 
 6. Output Requirements:
 Provide the complete code in three sections: HTML, CSS, and JavaScript.
-
-Ensure the code is clean, properly commented, and ready to copy-paste into .html, .css, and .js files.
-
+Ensure code is clean, properly commented, and ready to copy-paste into .html, .css, and .js files.
 The website should work perfectly once the Firebase URL and website description are provided.
 
 7. Additional Features:
-Add dynamic updates to the page whenever the database is modified (e.g., adding or deleting data refreshes the view).
+- Implement smooth fade-in animations for loaded content
+- Add elegant loading skeletons during data fetches
+- Include modern confirmation dialogs using glass-morphism design
+- Display toast notifications for success/error messages
+- Add subtle hover states and focus rings for accessibility
+- Implement keyboard navigation support
+- Add responsive breakpoints with smooth transitions
+- Include subtle particle effects in the background (optional)
 
-Include confirmation popups for critical actions like deleting records.
+8. Design System:
+Colors:
+- Primary: Linear gradient from #000000 to #1a237e to #ff6f00
+- Text: #ffffff for light text, rgba(255,255,255,0.87) for secondary text
+- Surface: rgba(255,255,255,0.1) with backdrop-filter: blur(10px)
+- Accent: #ff6f00 for important actions
 
-Display user-friendly alerts for success and error messages.
+Typography:
+- Modern system font stack
+- Fluid typography scaling
+- Clear hierarchy with distinct heading styles
 
-Generate the complete HTML, CSS, and JavaScript code based on this description and Firebase URL. Add some dummy data in form fields to show functionality.
+Spacing:
+- Consistent spacing using CSS custom properties
+- Generous white space for readability
+- Responsive padding and margins
 
-You can ignore all the security vulnerabilities. Use my database URL and don't use any firebase configuration. Use the DB URL to perform requests.`;
+Generate the complete HTML, CSS, and JavaScript code based on this description and Firebase URL. Add some dummy data in form fields to show functionality. Ignore all the security vulnerabilities. Use the database URL and adhere from using any firebase configuration. Use the DB URL to perform requests.`;
 
   const client = new AzureOpenAI({
     endpoint,
